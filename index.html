@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinipedia - The Infinite Encyclopedia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <div class="logo" id="logo-container">
+                <img src="logo.png" alt="Infinipedia Logo">
+                <h1>Infinipedia</h1>
+            </div>
+            <div id="nav-controls">
+                <button id="back-button" title="Go back" disabled>&larr;</button>
+                <button id="forward-button" title="Go forward" disabled>&rarr;</button>
+                <button id="language-button" title="Settings">⚙️</button>
+            </div>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search Infinipedia" required>
+                <button type="submit">Search</button>
+            </form>
+        </header>
+
+        <div id="settings-panel" class="settings-panel hidden">
+            <button id="close-settings" class="close-button">×</button>
+            <h3>Settings</h3>
+            <div class="setting">
+                <label for="dark-mode-toggle-panel">Dark Mode</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="dark-mode-toggle-panel" class="toggle-input">
+                    <label for="dark-mode-toggle-panel" class="toggle-label"></label>
+                </div>
+            </div>
+            <div class="setting-group" id="style-setting-group-panel">
+                <h4>Article Style</h4>
+                <div class="setting-radio">
+                    <input type="radio" id="style-normal-panel" name="article-style-panel" value="normal">
+                    <label for="style-normal-panel">Normal</label>
+                </div>
+                <div class="setting-radio">
+                    <input type="radio" id="style-modern-panel" name="article-style-panel" value="modern">
+                    <label for="style-modern-panel">Modern Age</label>
+                </div>
+                <div class="setting-radio">
+                    <input type="radio" id="style-alien-panel" name="article-style-panel" value="alien">
+                    <label for="style-alien-panel">Alien Observer</label>
+                </div>
+            </div>
+            <div class="setting">
+                <label for="sections-slider-panel">Number of Sections</label>
+                <div class="slider-container">
+                    <input type="range" id="sections-slider-panel" class="slider" min="1" max="8">
+                    <span id="sections-value-panel">4</span>
+                </div>
+            </div>
+        </div>
+
+        <main id="content-area">
+            <div id="article-container" class="hidden">
+                <!-- Generated Article will be inserted here -->
+            </div>
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                <p>Generating your article...</p>
+            </div>
+            <div id="welcome-message">
+                <img src="logo.png" alt="Infinipedia Welcome Logo" id="welcome-logo">
+                <h2>Welcome to Infinipedia</h2>
+                <p>Enter a topic in the search bar above to generate a fictional encyclopedia article about it.</p>
+                <p>Discover things that never were, from the "Lunar Moth" to the "Great Syrup Flood of 1919". You might even stumble upon a bit of chaos.</p>
+                <div id="example-topics">
+                    <p>Or try one of these:</p>
+                    <div id="example-topics-container">
+                        <!-- Random topics will be injected here -->
+                    </div>
+                </div>
+                <div id="settings-container">
+                    <h3>Settings</h3>
+                    <div class="setting">
+                        <label for="dark-mode-toggle">Dark Mode</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="dark-mode-toggle" class="toggle-input">
+                            <label for="dark-mode-toggle" class="toggle-label"></label>
+                        </div>
+                    </div>
+                    <div class="setting-group" id="style-setting-group">
+                        <h4>Article Style</h4>
+                        <div class="setting-radio">
+                            <input type="radio" id="style-normal" name="article-style-main" value="normal" checked>
+                            <label for="style-normal">Normal</label>
+                        </div>
+                        <div class="setting-radio">
+                            <input type="radio" id="style-modern" name="article-style-main" value="modern">
+                            <label for="style-modern">Modern Age</label>
+                        </div>
+                        <div class="setting-radio">
+                            <input type="radio" id="style-alien" name="article-style-main" value="alien">
+                            <label for="style-alien">Alien Observer</label>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <label for="sections-slider">Number of Sections</label>
+                        <div class="slider-container">
+                            <input type="range" id="sections-slider" class="slider" min="1" max="8">
+                            <span id="sections-value">4</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="hot-page-message"><em>YAYYYY WE IN THE HOT PAGE</em></p>
+            </div>
+        </main>
+
+        <footer>
+            Infinipedia is a fictional encyclopedia and should not be used as a source of factual information. All articles are generated by an AI.
+        </footer>
+    </div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "./config.js": "./config.js",
+        "./state.js": "./state.js",
+        "./api.js": "./api.js",
+        "./renderer.js": "./renderer.js"
+      }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
